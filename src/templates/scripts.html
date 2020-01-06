@@ -1,0 +1,141 @@
+{% load static %} 
+ 
+<!-- MAIN JS FILES -->
+ <script type="text/javascript" src="{% static 'js\jquery-1.11.3.min.js' %}"></script>
+ <script type="text/javascript" src="{% static 'js\jquery-ui-custom.min.js' %}"></script>
+ <script type="text/javascript" src="{% static 'js\jquery.ascensor.min.js' %}"></script>
+ <script type="text/javascript" src="{% static 'js\nerveslider.min.js' %}"></script>
+ <!-- SLIDER -->
+ <script type="text/javascript" src="{% static 'js\nerveslider.min.js' %}"></script>
+ <!-- BACKSTRETCH (HOMEPAGE RIGHT SIDE BG IMAGE) -->
+ <script type="text/javascript" src="{% static 'js\backstretch.min.js' %}"></script>
+ <script type="text/javascript">
+     jQuery(document).ready(function () {
+         "use strict";
+         jQuery('#home-image').backstretch("images/photos/img2.jpg");
+     });
+ </script>
+ <!-- POST IMAGE LOOP -->
+ <script type="text/javascript">
+     jQuery(window).load(function () {
+         "use strict";
+         jQuery(".blog-img").each(function () {
+             if (jQuery(this).attr('data-image')) {
+                 jQuery(this).backstretch(jQuery(this).data('image'), {
+                     fade: 500
+                 });
+             }
+         });
+     });
+ </script>
+ <script type="text/javascript">
+     jQuery("#cv-page-slider").nerveSlider({
+         /* Image Slider Settings */
+         sliderAutoPlay: true,
+         slideTransitionDelay: 3000,
+         sliderWidth: "100%",
+         sliderHeight: "100%",
+         slideTransitionEasing: 'easeInOutQuint',
+         slideTransitionSpeed: 1000,
+         sliderResizable: true,
+         sliderKeepAspectRatio: false,
+         slideTransitionDirection: "down",
+         allowKeyboardEvents: false,
+         slidesDraggable: false,
+         showDots: true,
+         showTimer: true,
+         showArrows: true,
+         showPause: true
+     });
+     jQuery("#cv-mobile-slider").nerveSlider({
+         /* Image Slider Settings */
+         sliderAutoPlay: true,
+         slideTransitionDelay: 3000,
+         sliderWidth: "100%",
+         sliderHeight: "100%",
+         slideTransitionEasing: 'easeInOutQuint',
+         slideTransitionSpeed: 1000,
+         sliderResizable: true,
+         sliderKeepAspectRatio: false,
+         slideTransitionDirection: "left",
+         allowKeyboardEvents: false,
+         slidesDraggable: false,
+         showDots: true,
+         showTimer: true,
+         showArrows: true,
+         showPause: true
+     });
+ </script>
+ <!-- TABS -->
+ <script type="text/javascript" src="{% static 'js\tabs.js' %}"></script>
+ <!-- HORIZONTAL TABS -->
+ <script type="text/javascript">
+     jQuery(document).ready(function () {
+         jQuery('#horizontalTab').easyResponsiveTabs({
+             type: 'default',
+             width: 'auto',
+             fit: true,
+             activate: function () {
+                 if (jQuery(window).width() > 768) {
+                     jQuery('#horizontalTab').find(".resp-tab-content").addClass('animatedmedium fadeIn');
+                     setTimeout(function () {
+                         jQuery('#horizontalTab').find(".resp-tab-content").removeClass('animatedmedium fadeIn');
+                     }, 400);
+                 }
+             }
+         });
+     });
+ </script>
+ <!-- VERTICAL TABS -->
+ <script type="text/javascript">
+     jQuery(document).ready(function () {
+         jQuery('#verticalTab').easyResponsiveTabs({
+             type: 'vertical',
+             width: 'auto',
+             fit: true,
+             activate: function () {
+                 if (jQuery(window).width() > 768) {
+                     jQuery('#verticalTab').find(".resp-tab-content").addClass('animatedmedium fadeIn');
+                     setTimeout(function () {
+                         jQuery('#verticalTab').find(".resp-tab-content").removeClass('animatedmedium fadeIn');
+                     }, 400);
+                 }
+             }
+         });
+     });
+ </script>
+ <script type="text/javascript">
+     jQuery(document).ready(function () {
+         if (jQuery(window).width() > 1024) {
+             jQuery('body').find(".cv-youtube-player").mb_YTPlayer();
+         }
+     });
+ </script>
+ <!-- YOUTUBE VIDEO -->
+ <script type="text/javascript" src="{% static 'js\youtube-player.js' %}"></script>
+ <!-- PORTFOLIO -->
+ <script type="text/javascript" src="{% static 'js\wookmark.js' %}"></script>
+ <script type="text/javascript" src="{% static 'js\portfolio-trigger.js' %}"></script>
+ <!-- TOOLTIPS -->
+ <script type="text/javascript" src="{% static 'js\jquery.tooltipster.min.js' %}"></script>
+ <!-- TESTIMONIALS -->
+ <script type="text/javascript" src="{% static 'js\quovolver.js' %}"></script>
+ <!-- SIDEBAR SCROLLBAR -->
+ <script type="text/javascript" src="{% static 'js\scrollbar.js' %}"></script>
+ <!-- LIGHTGALLERY -->
+ <script type="text/javascript" src="{% static 'js\lightgallery.js' %}"></script>
+ <script type="text/javascript" src="{% static 'js\galleries.js' %}"></script>
+ <!-- ACCORDION -->
+ <script type="text/javascript" src="{% static 'js\accordion.js' %}"></script>
+ <!-- FLICKR -->
+ <script type="text/javascript" src="{% static 'js\jflickrfeed.min.js' %}"></script>
+ <!-- GOOGLE MAP -->
+ <script type="text/javascript" src="{% static 'js\googlemap.js' %}"></script>
+ <!-- CUSTOM JS -->
+ <script type="text/javascript" src="{% static 'js\home-custom.js' %}"></script>
+ <script src="../ckeditor.js"></script>
+ <script>
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace( 'editor1' );
+</script>
