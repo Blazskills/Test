@@ -63,10 +63,10 @@
         <section class="floor floor-1">
             <div id="home-image">
                 <div id="home-title">
-                    {% for context in context %}
-                    <h1><span class="mobile-title">{{ context.firstname }}</span><span>{{ context.lastname }}</span></h1>
-                    <p>{{ context.profession }}</p>
-                    {% endfor %}
+                    {% for projects in projects%}
+                    <h1><span class="mobile-title">{{projects.firstname}}</span><span>{{projects.firstname}}  {{ projects.lastname }}</span></h1>
+                    <p>{{ projects.profession }}</p>
+                     {% endfor %}
                 </div>
                 <!-- SOCIAL ICONS -->
                 <div id="cv-home-social-bar-container">
@@ -103,7 +103,9 @@
             </div>gdfd
             <!-- PAGE CONTENT -->
             <div class="cv-page-content">
-                <h2 class="border">ABOUT ME</h2>
+                            {% for projects in projects%}
+                <h2 class="border">{{projects.lastname}}</h2>
+                {% endfor %}
                 <p>Laborum varias in possumus philosophari nam mandaremus ad malis. Sint fidelissimae tempor fugiat expetendis. Est nisi quibusdam admodum ut noster laborum se tamen culpa aut labore.</p>
                 <!-- TABLE -->
                 <ul class="cv-table">

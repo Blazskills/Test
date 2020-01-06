@@ -1,7 +1,10 @@
 from django.shortcuts import render
+from about.models import Owner
 
 def index(request):
-    return render(request, 'index.html', {})
+    projects = Owner.objects.all()
+    return render(request, 'index.html',{'projects': projects} )
+
 
 def blog(request):
     return render(request, 'blog.html', {})
